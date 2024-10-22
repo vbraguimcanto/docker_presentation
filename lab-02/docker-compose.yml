@@ -1,4 +1,4 @@
-version: '3.8'
+
 services:
   nginx:
     build: 
@@ -32,7 +32,7 @@ services:
       dockerfile: ./docker/python.dockerfile
       context: .
     image: docker-presentation/api
-    container_name: api-1
+    container_name: api-2
     ports:
       - "5000"
     networks: 
@@ -52,6 +52,9 @@ services:
       - "5432:5432"
     networks: 
         - api-network
+
+volumes:
+  postgres_data:
 
 networks:
   api-network:
