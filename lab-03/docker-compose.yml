@@ -7,4 +7,5 @@ services:
       - "3128:3128"
     volumes:
       - ./squid.conf:/etc/squid/squid.conf
+      - ./blocked_sites.txt:/etc/squid/blocked_sites.txt
     restart: unless-stopped
